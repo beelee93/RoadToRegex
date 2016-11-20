@@ -101,7 +101,8 @@ public class NFANode {
             
             if(getSet != null) {
                 for(NFANode n : getSet) {
-                    if(!closureStack.contains(n))
+                    if(!closureStack.contains(n) &&
+                       !closureTemp.contains(n))
                         closureStack.push(n);
                 }
             }

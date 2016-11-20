@@ -14,31 +14,22 @@ public class Example {
                 node1 = fa.createNode(false),
                 node2 = fa.createNode(false),
                 node3 = fa.createNode(false),
-                node4 = fa.createNode(true),
-                node5 = fa.createNode(false), 
-                node6 = fa.createNode(false),
-                node7 = fa.createNode(false);
+                node4 = fa.createNode(true);
         
         node0.set('a', node1);
-        node0.set('a', node5);
+        node0.set('a', node2);
+        node0.set(NFANode.NULL, node3);
         
-        node1.set('b', node2);
-        node1.set(NFANode.NULL, node4);
+        node1.set('b', node3);
         
-        node2.set('a', node3);
+        node2.set('c', node3);
         
-        node3.set(NFANode.NULL, node1);
+        node3.set(NFANode.NULL, node0);
         node3.set(NFANode.NULL, node4);
-        
-        node5.set('c', node7);
-        node5.set('c', node6);
-        
-        node6.set('e', node4);
-        node7.set('d', node4);
         
         Scanner sc = new Scanner(System.in);
         
-        System.out.print("String to test against 'a(ba)*|ac(e|d)' regex: ");
+        System.out.print("String to test against '(ab|ac)*' regex: ");
         String line = sc.nextLine().trim();
         
         int i;

@@ -9,20 +9,22 @@ import java.util.Scanner;
 public class Example {
     public static void main(String[] args) {
         DeterministicFA fa = new DeterministicFA();
-        
-        // create the nodes
+
+// create the nodes
         DFANode node0 = fa.createNode(false),
                 node1 = fa.createNode(true);
-        
-        // Node0 -> Node1 on [1-9]
-        for(int i=1;i<10;i++) 
-            node0.set((char)(0x30+i), node1);
-        
-        // Node1 -> Node1 on [0-9]
-        for(int i=0;i<10;i++) 
-            node1.set((char)(0x30+i), node1);
-        
-        // Node1 -> Node0 on + or -
+
+// Node0 -> Node1 on [1-9]
+        for (int i = 1; i < 10; i++) {
+            node0.set((char) (0x30 + i), node1);
+        }
+
+// Node1 -> Node1 on [0-9]
+        for (int i = 0; i < 10; i++) {
+            node1.set((char) (0x30 + i), node1);
+        }
+
+// Node1 -> Node0 on + or -
         node1.set('+', node0);
         node1.set('-', node0);
         
