@@ -109,6 +109,10 @@ public class NFANode {
         }
         
         return closureTemp;
-        
+    }
+    
+    HashSet<NFANode> getClosureNonStatic() {
+        HashSet<NFANode> getSet = getClosure();
+        return (HashSet<NFANode>)getSet.clone();
     }
 }

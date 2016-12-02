@@ -27,6 +27,8 @@ public class Example {
         node3.set(NFANode.NULL, node0);
         node3.set(NFANode.NULL, node4);
         
+        fa.reset();
+        
         Scanner sc = new Scanner(System.in);
         
         System.out.print("String to test against '(ab|ac)*' regex: ");

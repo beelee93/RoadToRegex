@@ -12,8 +12,6 @@ public class DeterministicFA implements FiniteAutomaton {
     private DFANode currentState;
     private String consumedChars, tentativeConsumedChars;
     
-    private boolean atStart = true;
-    
     public DeterministicFA() {
         nodeList = new ArrayList();
         currentState = null;
@@ -21,12 +19,7 @@ public class DeterministicFA implements FiniteAutomaton {
     }
     
     @Override
-    public boolean nextInput(char a) {
-        if(atStart) {
-            atStart = false;
-            currentState = nodeList.get(0);
-        }
-        
+    public boolean nextInput(char a) {        
         if(currentState == null)
             return false;
         
@@ -72,8 +65,15 @@ public class DeterministicFA implements FiniteAutomaton {
     
     @Override
     public void reset() {
-        atStart = true;
+        currentState = nodeList.get(0);
         consumedChars = tentativeConsumedChars = "";
     }
     
+    public DFANode getNode(int id) {
+        return nodeList.get(id);
+    }
+    
+    public int getNodeCount() {
+        return nodeList.size();
+    }
 }
