@@ -2,15 +2,11 @@
 
 ### Introduction
 This project is more for my own self learning. What better way to learn about Regex than to code an engine for it? 
-There are four components in this project:
+There are three components in this project:
 
 1. DFA (optimised and unoptimised) 
-2. NFA 
-3. NFA-to-DFA converter 
-4. Regex-to-DFA converter 
-
-The blog posts that talks about this project can be found here:
-
+2. NFA (convertible to DFA)
+3. Regex-to-NFA Converter 
 
 The project was made using NetBeans IDE 8.1, using JDK 1.8
 
